@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Compass, HeartHandshake, Scale, Sparkles, CloudSun, ArrowRight, AlertCircle } from 'lucide-react';
 import { TopicId } from '../types/iching';
 import { TOPICS } from '../data/themes';
+import { HexagramArt } from '../components/HexagramArt';
 
 interface HomeViewProps {
   onStartDivination: (topicId: TopicId, question: string) => void;
@@ -64,54 +65,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onStartDivination }) => {
             </p>
           </div>
 
-          {/* 融入背景的横向水墨插画（朱砂红日、远山、苍松云气） */}
-          <div className="relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden pointer-events-none select-none my-1">
-            <svg
-              viewBox="0 0 500 220"
-              className="w-full h-full object-cover"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              <defs>
-                <linearGradient id="heroGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#F7F3EB" stopOpacity="0.1" />
-                  <stop offset="100%" stopColor="#F7F3EB" stopOpacity="0.95" />
-                </linearGradient>
-              </defs>
-
-              {/* 朱砂圆日徐徐升起 */}
-              <circle cx="340" cy="80" r="38" fill="#A9322D" opacity="0.85" />
-
-              {/* 远山重峦叠嶂 */}
-              <path
-                d="M160,220 L240,90 L300,145 L380,105 L460,150 L500,120 L500,220 Z"
-                fill="#8C8576"
-                opacity="0.4"
-              />
-
-              {/* 中景崇峦 */}
-              <path
-                d="M0,220 L60,150 L140,120 L220,180 L310,135 L410,220 Z"
-                fill="#4D473E"
-                opacity="0.75"
-              />
-
-              {/* 挺拔苍松 */}
-              <g opacity="0.85" stroke="#292722" strokeLinecap="round">
-                <line x1="120" y1="130" x2="120" y2="190" strokeWidth="2.5" />
-                <path d="M120,140 C100,130 90,145 75,135" fill="none" strokeWidth="2" />
-                <path d="M120,155 C140,140 155,150 170,140" fill="none" strokeWidth="2" />
-                <circle cx="75" cy="135" r="8" fill="#292722" opacity="0.6" />
-                <circle cx="170" cy="140" r="8" fill="#292722" opacity="0.6" />
-              </g>
-
-              {/* 雾气与淡入背景渐变 */}
-              <path
-                d="M0,180 Q140,165 280,185 T500,175 L500,220 L0,220 Z"
-                fill="#F7F3EB"
-                opacity="0.8"
-              />
-              <rect width="500" height="220" fill="url(#heroGradient)" />
-            </svg>
+          {/* 融入背景的横向水墨画卷（中国传统水墨山水、朱砂红日） */}
+          <div className="relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden pointer-events-none select-none my-1 border border-[#E3DCD1]/30">
+            <HexagramArt hexagramNumber={1} variant="hero" className="w-full h-full" />
           </div>
         </div>
 

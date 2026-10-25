@@ -77,14 +77,13 @@ export const ResultView: React.FC<ResultViewProps> = ({
           {/* 左侧：首张 4:5 艺术主卡 (lg:col-span-5) */}
           <div className="lg:col-span-5 lg:sticky lg:top-20">
             <div className="relative w-full rounded-master overflow-hidden bg-[#FFFCF6] border border-[#E3DCD1] shadow-card aspect-[4/5] flex flex-col justify-between p-6">
-              {/* 背景艺术插画（带渐变蒙层，确保文字清晰可读） */}
+              {/* 背景艺术水墨国画（精准融入卡片，为文字保留干净区域） */}
               <div className="absolute inset-0 z-0">
                 <HexagramArt
                   hexagramNumber={origHex.number}
-                  className="w-full h-full opacity-65"
+                  className="w-full h-full"
+                  variant="card"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#FFFCF6] via-[#FFFCF6]/60 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#FFFCF6]/80 via-transparent to-transparent" />
               </div>
 
               {/* 卡片顶部：左上卦序，中上/左上准确的六爻卦象图形 */}

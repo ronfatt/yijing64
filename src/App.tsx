@@ -193,7 +193,7 @@ export const App: React.FC = () => {
 
     // 解析 Hash 路由
     const hash = window.location.hash.toLowerCase();
-    if (hash === '#divination') {
+    if (hash === '#divination' || hash === '#coins') {
       setDivinationParams({ topicId: 'career', question: '想换一个方向，却一直不敢下决心。' });
       setIsDivining(true);
     } else if (hash === '#result') {
